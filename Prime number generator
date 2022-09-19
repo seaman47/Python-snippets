@@ -1,0 +1,8 @@
+def primes(n): # n = the range within primes are seeked
+    p = list(range(n+1))
+    p[1] = 0
+    for i in range(2, n+1):
+        if p[i] > 0:
+            p[2*i::i] = [0] * int((n-i)/i)
+    p = [i for i in p if i > 0]
+    return p
